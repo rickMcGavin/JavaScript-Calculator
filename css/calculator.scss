@@ -2,12 +2,26 @@ $dark-primary-color:    #616161;
 $defualt-primary-color: #9E9E9E;
 $light-primary-color:   #F5F5F5;
 $text-default-color:    #212121;
-$accent-color:          #FFEB3B;
+$accent-color:          #FFC107;
 $divider-color:         #BDBDBD;
 
+
+
+
+
+
 body {
-  background: $light-primary-color;
+  align-items: center;
+  background: $divider-color;
+  color: $light-primary-color;
+  display: flex;
+  font-family: 'Roboto', sans-serif;
 }
+
+
+
+
+
 
 .calculator-container {
   background: $light-primary-color;
@@ -17,27 +31,65 @@ body {
   margin: 0 auto;
   height: 414px;
   width:  281px;
-
 }
+
 
 .display {
   background: $dark-primary-color;
   border: .5px solid $divider-color;
+  line-height: 69px;
+  padding: 10px 20px;
+  text-align: right;
   height: 69px;
   width:  100%;
 }
 
+
 .button-container {
   border: .5px solid $divider-color;
+  display: flex;
+  flex-wrap: wrap;
   height: 341px;
   width:  100%;
 }
 
-.primary-button {
-  background: $defualt-primary-color;
-  border: 1px solid $divider-color;
-  text-align: center;
-  font-size: 1em;
-  height: 69px;
-  width: 71px;
-}
+  .primary-button {
+    background: $defualt-primary-color;
+    border: 1px solid $divider-color;
+    text-align: center;
+    font-size: 1em;
+    height: 69px;
+    width: 69.75px;
+  }
+
+  .primary-button:hover {
+    border: 1px solid $accent-color;
+  }
+
+  .primary-button:active {
+    background: $accent-color;
+    outline: none;
+  }
+
+  .primary-button:focus {
+    outline: none;
+  }
+
+  .zero-button {
+    width: 69.75px * 2;
+  }
+
+  .equals-button {
+    background: $accent-color;
+    height: 69px * 2;
+    position: relative;
+    top: -69px;
+  }
+
+  .equals-button:hover {
+    background: $defualt-primary-color;
+  }
+
+  .equals-button:active {
+    background: $accent-color;
+  }
