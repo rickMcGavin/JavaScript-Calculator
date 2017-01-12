@@ -1,13 +1,13 @@
+
+/*----------------------------*\
+  1. MAIN SETUP
+\*----------------------------*/
 $dark-primary-color:    #616161;
 $defualt-primary-color: #9E9E9E;
 $light-primary-color:   #F5F5F5;
 $text-default-color:    #212121;
 $accent-color:          #FFC107;
 $divider-color:         #BDBDBD;
-
-
-
-
 
 
 body {
@@ -22,7 +22,9 @@ body {
 
 
 
-
+/*----------------------------*\
+  2. CALCULATOR
+\*----------------------------*/
 .calculator-container {
   background: $light-primary-color;
   box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
@@ -34,6 +36,13 @@ body {
 }
 
 
+
+
+
+
+/*----------------------------*\
+  3. DISPLAY
+\*----------------------------*/
 .display {
   background: $dark-primary-color;
   border: 0.5px solid $divider-color;
@@ -45,6 +54,13 @@ body {
 }
 
 
+
+
+
+
+/*----------------------------*\
+  4. BUTTONS
+\*----------------------------*/
 .button-container {
   border: 0.5px solid $divider-color;
   display: flex;
