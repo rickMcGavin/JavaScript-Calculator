@@ -25,20 +25,20 @@ body {
 
 .calculator-container {
   background: $light-primary-color;
-  border: .5px solid $divider-color;
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
-  height: 414px;
+  height: 418px;
   width:  281px;
 }
 
 
 .display {
   background: $dark-primary-color;
-  border: .5px solid $divider-color;
+  border: 0.5px solid $divider-color;
   line-height: 69px;
-  padding: 10px 20px;
+  padding: 0 20px;
   text-align: right;
   height: 69px;
   width:  100%;
@@ -46,11 +46,11 @@ body {
 
 
 .button-container {
-  border: .5px solid $divider-color;
+  border: 0.5px solid $divider-color;
   display: flex;
   flex-wrap: wrap;
-  height: 341px;
-  width:  100%;
+  height: 345px;
+  width:  281px;
 }
 
   .primary-button {
