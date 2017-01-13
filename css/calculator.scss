@@ -11,9 +11,13 @@ $divider-color:         #BDBDBD;
 
 
 body {
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background: $divider-color;
   color: $light-primary-color;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   font-family: 'Roboto', sans-serif;
   height: 100vh;
@@ -29,11 +33,15 @@ body {
 .calculator-container {
   background: $light-primary-color;
   box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   margin: 0 auto;
-  height: 418px;
-  width:  281px;
+  height: 418px + 134px;
+  width:  100%;
+  max-width: 380px;
 }
 
 
@@ -46,11 +54,15 @@ body {
 \*----------------------------*/
 .display {
   background: $dark-primary-color;
-  border: 0.5px solid $divider-color;
-  line-height: 69px;
+  border-top: 2px solid $divider-color;
+  border-right: 2px solid $divider-color;
+  border-bottom: 0.5px solid $divider-color;
+  border-left: 2px solid $divider-color;
+  font-size: 1.5em;
+  line-height: 138px;
   padding: 0 20px;
   text-align: right;
-  height: 69px;
+  height: 138px;
   width:  100%;
 }
 
@@ -64,10 +76,13 @@ body {
 \*----------------------------*/
 .button-container {
   border: 0.5px solid $divider-color;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  height: 345px;
-  width:  281px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  height: 345px + 66px;
+  width:  100%;
 }
 
   .primary-button {
@@ -75,8 +90,8 @@ body {
     border: 1px solid $divider-color;
     text-align: center;
     font-size: 1em;
-    height: 69px;
-    width: 69.75px;
+    height: 20%;
+    width: 25%;
   }
 
   .primary-button:hover {
@@ -93,14 +108,14 @@ body {
   }
 
   .zero-button {
-    width: 69.75px * 2;
+    width: 50%;
   }
 
   .equals-button {
     background: $accent-color;
-    height: 69px * 2;
+    height: 40%;
     position: relative;
-    top: -69px;
+    top: -82px;
   }
 
   .equals-button:hover {
