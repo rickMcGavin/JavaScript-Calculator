@@ -11,8 +11,8 @@ $divider-color:         #BDBDBD;
 
 
 body {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
+  -webkit-box-align:   center;
+      -ms-flex-align:  center;
           align-items: center;
   background: $divider-color;
   color: $light-primary-color;
@@ -52,13 +52,13 @@ body {
 /*----------------------------*\
   3. DISPLAY
 \*----------------------------*/
-.display {
+.display-class {
   background: $dark-primary-color;
-  border-top: 2px solid $divider-color;
-  border-right: 2px solid $divider-color;
-  border-bottom: 0.5px solid $divider-color;
-  border-left: 2px solid $divider-color;
-  font-size: 1.5em;
+  border-top:    2px solid      $divider-color;
+  border-right:  2px solid      $divider-color;
+  border-bottom: 0.5px solid    $divider-color;
+  border-left:   2px solid      $divider-color;
+  font-size:   1.5em;
   line-height: 138px;
   padding: 0 20px;
   text-align: right;

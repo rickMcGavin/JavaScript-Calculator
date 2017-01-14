@@ -24,14 +24,12 @@
   };
 
   Calculator.prototype.handleOperator = function(operator) {
-    if (!isNaN(this.arr[this.arr.length - 1] += operator)) {
-      if (operator === ".") {
-        this.arr[this.arr.length - 1] += operator.toString();
-      } else {
-        this.arr.push(operator);
-      }
-      this.updateDisplay();
+    if (operator === ".") {
+      this.arr[this.arr.length - 1] += operator.toString();
+    } else {
+      this.arr.push(operator);
     }
+    this.updateDisplay();
   };
 
   Calculator.prototype.allClear = function(funcName) {
@@ -72,13 +70,13 @@
 
   for (var i = 0; i < operatorButtons.length; i++) {
     operatorButtons[i].addEventListener("click", function() {
-      calc.handleOperator(this.textContent);
+      calc.handleOperator(this.innerText);
     });
   }
 
   for (var j = 0; j < numberButtons.length; j++) {
     numberButtons[j].addEventListener("click", function() {
-      calc.handleNumber(this.textContent);
+      calc.handleNumber(this.innerText);
     });
   }
 })();
