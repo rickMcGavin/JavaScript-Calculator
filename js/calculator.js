@@ -2,9 +2,6 @@
 
 // declaring functions
 (function() {
-
-
-
   function Calculator(displayId) {
     this.displayId = displayId;
     this.arr = [];
@@ -24,7 +21,7 @@
   };
 
   Calculator.prototype.handleOperator = function(operator) {
-    if (!isNaN(this.arr[this.arr.length - 1] += operator)) {
+    if (!isNaN(this.arr[this.arr.length - 1])) {
       if (operator === ".") {
         this.arr[this.arr.length - 1] += operator.toString();
       } else {
@@ -52,11 +49,12 @@
 
     // declaring needed variables
   var calc = new Calculator("display");
-  var numberButtons = document.getElementsByClassName("number-buttons");
-  var operatorButtons = document.getElementsByClassName("operator-buttons");
+  var numberButtons = document.getElementsByClassName("number-button");
+  var operatorButtons = document.getElementsByClassName("operator-button");
   var allClearButton = document.querySelector(".all-clear");
   var clearEntryButton = document.querySelector(".clear-entry");
   var equalsButton = document.querySelector(".equals-button");
+
 
   allClearButton.addEventListener("click", function() {
     calc.allClear();
@@ -81,4 +79,30 @@
       calc.handleNumber(this.textContent);
     });
   }
+
+  // key controls
+  window.onkeyup = function(event) {
+    /* Below, I broke the number 8 out separately from the rest because the asterisk and the number 8 share the same keycode, and it was allowing the asterisk to be entered in to the array on the end of a number */
+    if ((event.keyCode >= 48 && event.keyCode <= 55)  ||
+        (event.key === "8") || (event.keyCode === 57) ||
+        (event.keyCode >= 96 && event.keyCode <= 105)) {
+      calc.handleNumber(event.key);           // numbers
+    } else if (event.keyCode === 27) {
+      calc.allClear();                        // escape = all clear
+    } else if (event.keyCode === 8) {
+      calc.clearEntry();                      // backspace/delete = clear entry
+    } else if (event.key === "+") {
+      calc.handleOperator(event.key);         // addition operator
+    } else if (event.key === "-") {
+      calc.handleOperator(event.key);         // subtraction operator
+    } else if (event.key === "*") {
+      calc.handleOperator(event.key);         // multiplication operator
+    } else if (event.key === "/") {
+      calc.handleOperator(event.key);         // division operator
+    } else if (event.key === ".") {
+      calc.handleOperator(event.key);         // decimal
+    } else if (event.keyCode === 13) {
+      calc.sumNumbers();                       // equals/sum operation
+    }
+  };
 })();
