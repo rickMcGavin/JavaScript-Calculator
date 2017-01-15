@@ -23,7 +23,9 @@
   Calculator.prototype.handleOperator = function(operator) {
     if (!isNaN(this.arr[this.arr.length - 1])) {
       if (operator === ".") {
-        this.arr[this.arr.length - 1] += operator.toString();
+        if (!this.arr[this.arr.length - 1].includes(".")) {
+          this.arr[this.arr.length - 1] += operator.toString();
+        }
       } else {
         this.arr.push(operator);
       }
